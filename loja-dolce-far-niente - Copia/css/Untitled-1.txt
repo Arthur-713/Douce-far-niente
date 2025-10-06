@@ -1,0 +1,189 @@
+/* ========================================== 
+    ARQUIVO
+/* ========= ARQUIVO: style.css ============= */
+/*=========================================== */
+
+/* --- ESTILOS GERAIS E RESET --- */
+/* Remove margens e preenchimentos padrão e define um modelode caixa mais intuitivo. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define estilos base para o corpo da página e implementa a técnica " Sticky Footer". */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fdfdfd;
+
+    /* Configuração para o Sticky Footer */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o body tenha no mínimo a altura total da tela */
+}
+
+/* Container principal para centralizar o conteúdo */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* Garante que as imagens sejam responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- CABEÇALHO E NAVEGAÇÃO --- */
+.cabecalho {
+    background-color: #162b46;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+    width: 100%;
+}
+
+/* Usa Flexbox para alinhar a logo (esquerda) e o menu (direita) */
+.cabecalho .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 50px;    /* Ajuste a altura máxima da sua logo conforme necessário */
+    display: block;
+}
+
+.menu-lista {
+    list-style: none; /* Remove os marcadores da lista */
+    display: flex;
+}
+
+.menu-lista li {
+    margin-left: 25px;
+}
+
+.menu-lista a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 4px;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.menu-lista a:hover {
+    color: #ff69b4; /* Cor rosa para o hover */
+    border-bottom-color: #ff69b4;
+}
+
+/* Botão "Hamburguer" para mobile (escondido por padrão em telas grandes) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* --- CONTEÚDO PRINCIPAL (MAIN) --- */
+/* Regra essencial para o "Sticky Footer": faz o conteúdo principal crescer e empurraro rodapé para baixo. */
+main {
+    flex: 1;
+}
+
+/* Estilo de exemplo para as seções de conteúdo */
+.corrossel, .produtos-em-destaque {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.carrossel h2, .produtos-em-destaque {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+/* --- RODAPÉ ---*/
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: auto; /* Garante que ele se separe do conteúdo */
+}
+
+.social-icons a {
+    margin-bottom: 15px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 22px;
+    margin: 0 12px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block; /*Permite o uso de 'transform' */
+}
+
+.social-icons a:hover {
+    color: #ff69b4;     /* Cor rosa para o hover */
+    transform: sacle(1.1);  /* Efeito de leve zoom */
+}
+
+footer p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+
+/* --- RESPONSIVIDADE (MEDIA QUERIES) --- */
+/* Estilos aplicados em telas com largura máxima de 768px (tablets e celulares) */
+@media (max-width: 768px) {
+    /* Mostra o botão hamburguer... */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* ...e esconde o menu de navegação por padrão. */
+    .menu-lista {
+        display: none;
+        position: absolute;
+        top: 82px; /* Altura do cabeçalho */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgb(0, 0, 0, 0.1);
+
+        /* Itens do menu agora em coluna */
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Classe 'active' que o JavaScript adiciona para mostrar o menu */
+    .menu-lista.active {
+        display: flex;
+    }
+
+    .menu-lista li {
+        margin: 0;
+        width: 100%;
+    }
+
+    .menu-lista a {
+        display: block;
+        padding: 58px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .menu-lista a:hover {
+        background-color: #f9f9f9;
+        border-bottom-color: #f0f0f0;
+    }
+}

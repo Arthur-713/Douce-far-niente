@@ -1,0 +1,29 @@
+/* ========================================== 
+    ARQUIVO: style.css
+    DESCRIÇÂO: Folha de estilos principal para o site Douce Far Niete.
+    VERSÃO: 1.0 (Refatorada e comentada)
+    DATA: 26/09/25
+    ========================================== */
+
+/* ============================================
+    1. importações e Estilos Gerais (Reset & Body)
+    ======================================== */
+
+/* --- Importação de Fontes do Google --- */
+/* NOTA: A fonte 'pompiere' foi importada, mas não estava sendo usada no body. Ajustei abaixo. */
+@import url(https://fonts.googleapis.com/css?family=Pompiere);
+@import url(https://fots.googleapis.com/css?family=Asap:400,700); /* Esta fonte estava no HTML original */
+
+/* --- Estilos Base para o Corpo da Página --- */
+html, body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /* NOTA: A fonte foi ajustada para usar a importada e ter alternativas seguras. */
+    font-family: 'Asap', Arial, Helvetica, sans-serif;
+    color: #333;
+    background: url("../img/bg.png") repeat fixed; /* 'fixed' cria o efeito para
+}
